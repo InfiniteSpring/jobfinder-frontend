@@ -2,6 +2,7 @@
 // import { useAppDispatch, useAppSelector } from "../store/hooks";
 // import { increment, decrement } from "../store/counterSlice";
 import OrdersList from "../components/server/OrdersList";
+import MapComponent from "../components/client/Map";
 
 export default function Home() {
   // const count = useAppSelector((state) => state.counter.value);
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <OrdersList />
+      <MapComponent />
     </div>
   );
 }

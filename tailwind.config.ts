@@ -20,7 +20,14 @@ export default {
   
 	daisyui: {
 	  themes: [
-		{
+		  {
+			grayGreen: {
+				"primary": "86, 60%, 49%",
+				"secondary": "88, 50%, 37%",
+				"emptySpaceBackground": "220, 6%, 22%",
+				"accentBackground": "210, 3%, 43%",
+				"mainBackground": "200, 10%, 15%",
+			},
 		  light: {
 			"primary": "0 100% 70%",
 			"secondary": "240 85% 55%",

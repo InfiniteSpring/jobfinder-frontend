@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { MdInvertColors } from "react-icons/md";
 
 
-const themes = ["light", "warm", "cool", "dark", "neon", "profe"];
+const themes = ["light", "warm", "cool", "dark", "neon", "profe", "grayGreen"];
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("grayGreen");
   const [isSelectThemeOpen, setIsSelectThemeOpen] = useState(false);    
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function ThemeSwitcher() {
             ))}
         </div></div> : <button className="text-primary font-bold" 
             onClick={() => setIsSelectThemeOpen(!isSelectThemeOpen)}>
-            <MdInvertColors className="w-8 h-8 mt-2" />
+            <MdInvertColors className="w-[2.5vh] h-[2.5vh] mt-2" />
         </button>
       }
     </div>
