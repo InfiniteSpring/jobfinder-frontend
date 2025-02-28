@@ -2,7 +2,7 @@ import { Providers } from "../store/provider";
 import "./globals.css";
 
 import Header from "../components/server/Header";
-import Filters from "../components/client/Filters";
+import Filters from "../components/client/FiltersSection";
 import Footer from "../components/server/Footer";
 
 export const metadata = {

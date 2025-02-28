@@ -10,7 +10,7 @@ export default function ProductCardClient({ product }: { product: Product }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="px-[2vh] py-[2vh] my-[2vh] rounded-xl bg-mainBackground text-foreground shadow-lg shadow-foreground">
+    <div className="relative px-[2vh] py-[2vh] my-[2vh] rounded-xl bg-mainBackground text-foreground shadow-lg shadow-foreground">
       <div className="firstLine flex justify-between">
         <h2 className="text-[1.8vh] font-bold">{product.name}</h2>
         <p className="text-primary text-[1.8vh] font-bold">{product.price} BYN / {product.duration}</p>
@@ -36,7 +36,7 @@ export default function ProductCardClient({ product }: { product: Product }) {
         </div>
       </div></div>: null
       }
-      <div className="expandBtn absolute right-[3vw] -translate-y-[3vh]"> 
+      <div className="expandBtn absolute right-[3%] -translate-y-[3vh]"> 
         <button
           className="mt-[.7vh] px-[1vw] py-[.7vh]"
           onClick={() => setExpanded(!expanded)}

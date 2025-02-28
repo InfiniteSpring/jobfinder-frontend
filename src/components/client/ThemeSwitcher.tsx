@@ -37,22 +37,22 @@ export default function ThemeSwitcher() {
     <div className="p-0">
       {
       isSelectThemeOpen ? <div>
-        <div className="fixed z-40 inset-0 bg-black backdrop-blur-lg opacity-50" onClick={() => setIsSelectThemeOpen(!isSelectThemeOpen)}></div>
-        <div className="fixed z-50 flex w-fit-content justify-center items-center p-2
-        bg-accentBackground text-foreground rounded-lg top-20 left-1/2 -translate-x-1/2
-        shadow-2xl gap-5">
+        <div className="fixed z-50 inset-0 bg-black backdrop-blur-lg opacity-60" onClick={() => setIsSelectThemeOpen(!isSelectThemeOpen)}></div>
+        <div className="fixed z-50 flex justify-center items-center p-[1vh]
+        bg-accentBackground text-foreground rounded-lg top-[10vh] left-1/2 -translate-x-1/2
+        shadow-2xl gap-[2vw]">
             {themes.map((t) => (
                 <button key={t} value={t}
-                className="border-none w-10 h-10 rounded-full"
+                className="border-none w-[3vh] h-[3vh] rounded-full"
                 style={{ backgroundColor: "hsl(var(--primary))" }}
                 onMouseEnter={() => handleMouseEnterOnSelectTheme(t)}
                 onMouseLeave={() => handleMouseLeaveOnSelectTheme()}
                 onClick={() => changeTheme(t)}>
                 </button>
             ))}
-        </div></div> : <button className="text-primary font-bold" 
+        </div></div> : <button className="text-primary font-bold flex" 
             onClick={() => setIsSelectThemeOpen(!isSelectThemeOpen)}>
-            <MdInvertColors className="w-[2.5vh] h-[2.5vh] mt-2" />
+            <MdInvertColors className="w-[3.2vh] h-[3.2vh]" />
         </button>
       }
     </div>

@@ -28,12 +28,14 @@ const MapComponent = () => {
 
   return (
     <div
-      id="map"
-      className="z-10 relative filter hue-rotate-[120deg] grayscale-[50%]"
-      style={{ width: '100%', height: '55vh' }}
+    id="map"
+    className="mapClass z-[5] relative filter 
+    hue-rotate-[450deg] grayscale-[100%]
+      w-[100%] h-[55vh]"
     >
       <div
-        className="absolute inset-0 top-0 left-0 h-full w-full bg-black opacity-10 z-20 pointer-events-none"
+        className="absolute inset-0 top-0 left-0 h-full w-full
+        bg-mainBackground opacity-[33%] z-20 pointer-events-none"
       ></div>
     </div>
   );

@@ -3,7 +3,7 @@ import OrderCard from './Order';
 
 async function OrdersList() {
   return (
-    <div className="orderList py-[1vh] px-[2vw] w-full overflow-hidden">
+    <div className="orderList py-[1vh] px-[2vw] w-[100%] overflow-hidden">
       <Suspense fallback={<div>Loading products...</div>}>
         <OrderCard productId="111" />
         <OrderCard productId="222" />

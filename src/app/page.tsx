@@ -9,7 +9,7 @@ export default function Home() {
   // const dispatch = useAppDispatch();
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="homeClass flex flex-col items-center justify-center w-full">
       <OrdersList />
       <MapComponent />
     </div>

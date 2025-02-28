@@ -85,14 +85,41 @@ body {
 
 
 .switchButton {
-  border-top: none;
+  border-bottom: none;
   padding: 2px 10px;
 }
 .switchButton.left {
-  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
 .switchButton.right {
-  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+
+@media (min-width: 768px) {
+  .homeClass {
+    flex-direction:row;
+    justify-content: left;
+  }
+  .orderList, .filtersDowner, .footerClass {
+    width: 50%;
+  }
+  .mapClass {
+    position: fixed;
+    right: 0;
+    top: 10vh;
+    width: 50%;
+    height: 90vh;
+  }
+  .headerIntroText {
+    display: flex;
+  }
+  .allFiltersContainer {
+    width: 60%;
+  }
+  .allFiltersGrid {
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+  }
 }
 
 

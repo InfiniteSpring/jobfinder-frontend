@@ -30,17 +30,17 @@ export default function BurgerMenu() {
   return (
     <div className="relative">
         <button onClick={() => setIsOpen(!isOpen)}
-        className="header__burger-menu p-2 rounded
-        pr-0">
-            <RiMenu3Fill className="w-[2.5vh] h-[2.5vh]" />
+        className="header__burger-menu p-0 rounded
+        pr-0 flex">
+            <RiMenu3Fill className="w-[3vh] h-[3vh]" />
         </button>
 
       {isOpen && (
         <div>
-        <div className="fixed inset-0 bg-black opacity-80" onClick={() => setIsOpen(!isOpen)}></div>
+        <div className="fixed inset-0 bg-black opacity-60" onClick={() => setIsOpen(!isOpen)}></div>
         <div className="fixed right-0 z-40 w-screen inset-shadow-black
         bg-mainBackground text-foreground p-[3vh] rounded-[2vh]
-        max-w-md max-h-screen
+        max-w-xl max-h-screen
         top-1/2 -translate-y-1/2">
           <div className="close flex justify-between">
             <div>
@@ -90,7 +90,7 @@ export default function BurgerMenu() {
                 </button>
                 <button onClick={() => console.log('handle privacy policy click')} className="cookies flex mt-[3vh]">
                     <MdOutlineSecurity className="w-[2.7vh] h-[2.7vh] text-primary" />
-                    <div className="ml-3 text-[2vh] font-bold truncate">Политика конфиденциальности</div>
+                    <div className="ml-3 text-[2vh] font-bold truncate">Конфиденциальность</div>
                 </button>
                 <button onClick={() => console.log('handle cookie click')} className="cookie flex mt-[3vh]">
                     <PiCookieLight className="w-[2.7vh] h-[2.7vh] text-primary" />
