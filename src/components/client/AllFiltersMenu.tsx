@@ -10,8 +10,7 @@ interface AllFiltersMenuProps {
 }
 
 function AllFiltersMenu({ isOpen, setIsOpen }: AllFiltersMenuProps) {
-  if (!isOpen) return null; // Скрываем меню, если оно закрыто
-
+  
   const [selectedFilters, setSelectedFilters] = useState<Record<string, string[]>>({});
 
   const filters = [
@@ -22,20 +21,22 @@ function AllFiltersMenu({ isOpen, setIsOpen }: AllFiltersMenuProps) {
     { name: "Возраст", options: ["Не важен", "18-25", "25-35"] },
     { name: "Документы", options: ["Не важжно", "Паспорт", "Тродовая"] },  
   ];
-
+  
   useEffect(() => {
     console.log(selectedFilters);
   }, [selectedFilters]);
-
+  
   const handleCheckboxChange = (filterName: string, option: string) => {
     setSelectedFilters((prev) => ({
       ...prev,
       [filterName]: prev[filterName]?.includes(option)
-        ? prev[filterName].filter((item) => item !== option)
-        : [...(prev[filterName] || []), option],
+      ? prev[filterName].filter((item) => item !== option)
+      : [...(prev[filterName] || []), option],
     }));
   };
-
+  
+  if (!isOpen) return null; // Скрываем меню, если оно закрыто
+  
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
@@ -43,7 +44,7 @@ function AllFiltersMenu({ isOpen, setIsOpen }: AllFiltersMenuProps) {
         onClick={() => setIsOpen(false)}
       ></div>
 
-      <div className="allFiltersContainer relative mb-[20%] z-50 w-[90%] bg-foreground bg-mainBackground border rounded-[2vh] p-[2vh] shadow-[2vh]"> 
+      <div className="allFiltersContainer relative mb-[20%] z-50 w-[90%] bg-foreground bg-mainBackground rounded-[2vh] p-[2vh] shadow-[2vh]"> 
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-[2.2vh] font-bold">Фильтры</h2>
           <button className="pr-0" onClick={() => setIsOpen(!isOpen)}>

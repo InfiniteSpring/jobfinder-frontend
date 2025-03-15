@@ -2,59 +2,41 @@
 
 import { useEffect, useState } from "react";
 
-import { MdInvertColors } from "react-icons/md";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 
-const themes = ["light", "warm", "cool", "dark", "neon", "profe", "grayGreen"];
+// const themes = ["light", "dark", "profe", "grayGreen"];
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState("grayGreen");
-  const [isSelectThemeOpen, setIsSelectThemeOpen] = useState(false);    
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("theme") || "professional";
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      localStorage.setItem("theme", savedTheme);
       setTheme(savedTheme);
       document.documentElement.setAttribute("data-theme", savedTheme);
     }
   }, []);
 
-  const changeTheme = (newTheme: string) => {
-    setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    setIsSelectThemeOpen(false);
+  const changeTheme = (currentTheme: string) => {
+    if(currentTheme === "light"){
+      setTheme("grayGreen");
+      localStorage.setItem("theme", "grayGreen");
+      document.documentElement.setAttribute("data-theme", "grayGreen");
+    } else {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+    console.log('currentTheme', currentTheme);
   };
-
-  const handleMouseEnterOnSelectTheme = (newTheme: string) => {
-    document.documentElement.setAttribute("data-theme", newTheme);
-  };
-  const handleMouseLeaveOnSelectTheme = () => {
-    document.documentElement.setAttribute("data-theme", theme);
-  };
-
+  
   return (
-    <div className="p-0">
-      {
-      isSelectThemeOpen ? <div>
-        <div className="fixed z-50 inset-0 bg-black backdrop-blur-lg opacity-60" onClick={() => setIsSelectThemeOpen(!isSelectThemeOpen)}></div>
-        <div className="fixed z-50 flex justify-center items-center p-[1vh]
-        bg-accentBackground text-foreground rounded-lg top-[10vh] left-1/2 -translate-x-1/2
-        shadow-2xl gap-[2vw]">
-            {themes.map((t) => (
-                <button key={t} value={t}
-                className="border-none w-[3vh] h-[3vh] rounded-full"
-                style={{ backgroundColor: "hsl(var(--primary))" }}
-                onMouseEnter={() => handleMouseEnterOnSelectTheme(t)}
-                onMouseLeave={() => handleMouseLeaveOnSelectTheme()}
-                onClick={() => changeTheme(t)}>
-                </button>
-            ))}
-        </div></div> : <button className="text-primary font-bold flex" 
-            onClick={() => setIsSelectThemeOpen(!isSelectThemeOpen)}>
-            <MdInvertColors className="w-[3.2vh] h-[3.2vh]" />
-        </button>
-      }
+    <div className="themeController flex items-center ml-[2vw]">
+      <button onClick={() => changeTheme(theme)}>
+        {theme === "light" ? <FiSun className="w-[2.5vh] h-[2.5vh]" /> : <FiMoon className="w-[2.5vh] h-[2.5vh]" />}
+      </button>
     </div>
   );
 }

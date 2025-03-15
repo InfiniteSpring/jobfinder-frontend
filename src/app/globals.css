@@ -8,6 +8,15 @@
   }
 }
 
+[data-theme="dark"] {
+  --foreground: #fff;
+  --mainBackground: 0 0% 7%;
+  --accentBackground: 0 0% 12%;
+  --emptySpaceBackground: 0 0% 18%;
+  --primary: 350 78% 50%;
+  --secondary: 51 100% 50%;
+}
+
 [data-theme="grayGreen"] {
   --foreground: #fff;
   --primary: 86, 60%, 49%;
@@ -24,42 +33,6 @@
   --emptySpaceBackground: 220 14% 90%;
   --primary: 0 100% 70%;
   --secondary: 240 85% 55%;
-}
-
-[data-theme="warm"] {
-  --foreground: #000;
-  --mainBackground: 40 100% 95%;
-  --accentBackground: 0 0% 100%;
-  --emptySpaceBackground: 40 80% 90%;
-  --primary: 10 90% 60%;
-  --secondary: 40 100% 50%;
-}
-
-[data-theme="cool"] {
-  --foreground: #000;
-  --mainBackground: 220 14% 95%;
-  --accentBackground: 0 0% 100%;
-  --emptySpaceBackground: 220 14% 85%;
-  --primary: 220 85% 60%;
-  --secondary: 160 85% 55%;
-}
-
-[data-theme="dark"] {
-  --foreground: #fff;
-  --mainBackground: 0 0% 7%;
-  --accentBackground: 0 0% 12%;
-  --emptySpaceBackground: 0 0% 18%;
-  --primary: 350 78% 50%;
-  --secondary: 51 100% 50%;
-}
-
-[data-theme="neon"] {
-  --foreground: #fff;
-  --mainBackground: 210 100% 5%;
-  --accentBackground: 220 100% 10%;
-  --emptySpaceBackground: 230 100% 15%;
-  --primary: 180 100% 50%;
-  --secondary: 300 100% 50%;
 }
 
 [data-theme="profe"] {
@@ -95,23 +68,12 @@ body {
   border-top-right-radius: 15px;
 }
 
+/* .flexableFilters {
+  display: none;
+} */
 
 @media (min-width: 768px) {
-  .homeClass {
-    flex-direction:row;
-    justify-content: left;
-  }
-  .orderList, .filtersDowner, .footerClass {
-    width: 50%;
-  }
-  .mapClass {
-    position: fixed;
-    right: 0;
-    top: 10vh;
-    width: 50%;
-    height: 90vh;
-  }
-  .headerIntroText {
+  .flexableFiltersL1 {
     display: flex;
   }
   .allFiltersContainer {
@@ -119,6 +81,42 @@ body {
   }
   .allFiltersGrid {
     grid-template-columns: 1.5fr 1.5fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homeClass {
+    flex-direction:row;
+    justify-content: left;
+  }
+  .orderList, .filtersDowner, .footerClass {
+    width: 50%;
+  } 
+  .mapClass {
+    position: fixed;
+    right: 0;
+    top: 10vh;
+    width: 50%;
+    height: 90vh;
+  }
+  .flexableFiltersL2 {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .headerIntroText {
+    display: flex;
+    font-size: calc(.7vh + .7vw);
+  }
+  .flexableFiltersL3 {
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  .flexableFiltersL4 {
+    display: flex;
   }
 }
 

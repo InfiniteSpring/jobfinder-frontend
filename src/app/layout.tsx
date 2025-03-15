@@ -6,7 +6,7 @@ import Filters from "../components/client/FiltersSection";
 import Footer from "../components/server/Footer";
 
 export const metadata = {
-  title: "Grapp",
+  title: "WorkBoard",
   description: "Поиск кратковременной работы, подработки, и клиентов для специалистов различных областей в Беларуси",
 };
 

@@ -41,9 +41,9 @@ export default function Filters() {
         }
     }
   return (
-    <div className="z-10 fixed top-[5vh]">
+    <div className="z-10 fixed top-[5vh] w-full">
         {isAllFiltersMenuOpen ? <AllFiltersMenu isOpen={isAllFiltersMenuOpen} setIsOpen={setIsAllFiltersMenuOpen} /> : null}
-        <div className="filtersUpper z-20 flex h-[5vh] w-screen justify-between items-top
+        <div className="filtersUpper z-20 flex h-[5vh] w-full justify-between items-top
         px-[4vw] bg-mainBackground text-foreground overflow-hidden">
             <div className="flex">
                 <button className="flex items-center h-[2.5vh] mt-[9px]" onClick={() => setIsSearchInput(!isSearchInput)}>
@@ -67,7 +67,7 @@ export default function Filters() {
                         <input type="text" placeholder="Поиск по названию" 
                         className="w-full pl-2 text-foreground truncate
                         bg-mainBackground text-[1.8vh] h-[90%]
-                        active:border-none focus:border-none active:border-none"
+                        focus:border-none active:border-none"
                         onChange={(e) => setSearchInputValue(e.target.value)}
                         value={searchInputValue}
                         />
@@ -84,17 +84,51 @@ export default function Filters() {
                 }
             </div>
             <div className="overflow-hidden flex mt-[5px] z-index-30 bg-mainBackground">
-                {/* <button className="h-8 px-3 py-0 ml-6 rounded-xl border-[1px] border-foreground">Очистить</button> */}
+                <button className="flexableFiltersL1 hidden h-min px-[1vw] py-[4px] ml-[3vw] font-bold rounded-[5vw] 
+                    border-[1px] border-gray-500 text-[1.5vh]"
+                    onClick={() => setIsAllFiltersMenuOpen(!isAllFiltersMenuOpen)}>
+                    {/* <GiSettingsKnobs className="w-[2vh] h-[2vh] mr-[.5vw]" /> */}
+                    Город
+                    <IoIosArrowDown className="w-[2vh] h-[2vh] ml-[.5vw] mt-[.2vh]" />
+                </button>
+                <button className="flexableFiltersL1 hidden h-min px-[1vw] py-[4px] ml-[3vw] font-bold rounded-[5vw] 
+                    border-[1px] border-gray-500 text-[1.5vh]"
+                    onClick={() => setIsAllFiltersMenuOpen(!isAllFiltersMenuOpen)}>
+                    {/* <GiSettingsKnobs className="w-[2vh] h-[2vh] mr-[.5vw]" /> */}
+                    Оплата
+                    <IoIosArrowDown className="w-[2vh] h-[2vh] ml-[.5vw] mt-[.2vh]" />
+                </button>
+                <button className="flexableFiltersL2 hidden h-min px-[1vw] py-[4px] ml-[3vw] font-bold rounded-[5vw] 
+                    border-[1px] border-gray-500 text-[1.5vh]"
+                    onClick={() => setIsAllFiltersMenuOpen(!isAllFiltersMenuOpen)}>
+                    {/* <GiSettingsKnobs className="w-[2vh] h-[2vh] mr-[.5vw]" /> */}
+                    Возраст
+                    <IoIosArrowDown className="w-[2vh] h-[2vh] ml-[.5vw] mt-[.2vh]" />
+                </button>
+                <button className="flexableFiltersL3 hidden h-min px-[1vw] py-[4px] ml-[3vw] font-bold rounded-[5vw] 
+                    border-[1px] border-gray-500 text-[1.5vh]"
+                    onClick={() => setIsAllFiltersMenuOpen(!isAllFiltersMenuOpen)}>
+                    {/* <GiSettingsKnobs className="w-[2vh] h-[2vh] mr-[.5vw]" /> */}
+                    Дата
+                    <IoIosArrowDown className="w-[2vh] h-[2vh] ml-[.5vw] mt-[.2vh]" />
+                </button>
+                <button className="flexableFiltersL4 hidden h-min px-[1vw] py-[4px] ml-[3vw] font-bold rounded-[5vw] 
+                    border-[1px] border-gray-500 text-[1.5vh]"
+                    onClick={() => setIsAllFiltersMenuOpen(!isAllFiltersMenuOpen)}>
+                    {/* <GiSettingsKnobs className="w-[2vh] h-[2vh] mr-[.5vw]" /> */}
+                    Длительность
+                    <IoIosArrowDown className="w-[2vh] h-[2vh] ml-[.5vw] mt-[.2vh]" />
+                </button>
                 <button className="h-min px-[1vw] py-[4px] ml-[3vw] font-bold rounded-[5vw] 
                 border-[1px] border-foreground text-[1.5vh] flex"
                 onClick={() => setIsAllFiltersMenuOpen(!isAllFiltersMenuOpen)}>
                     <GiSettingsKnobs className="w-[2vh] h-[2vh] mr-[.5vw]" />
-                    Все фильтры
+                    Все
                     <IoIosArrowDown className="w-[2vh] h-[2vh] ml-[.5vw] mt-[.2vh]" />
                 </button>
             </div>
         </div>
-        <div className="filtersDowner z-10 flex w-full justify-between
+        <div className="filtersDowner z-[4] flex w-full justify-between
         items-center px-[6vw] text-foreground overflow-hidden font-bold
         bg-mainBackground border-b-[.1vh] border-primary">
             <div className="listMapSwitchButtons align-top z-00"

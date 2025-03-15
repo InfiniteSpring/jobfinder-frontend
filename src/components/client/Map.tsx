@@ -27,10 +27,10 @@ const MapComponent = () => {
   }, [ymapsLoaded]);
 
   return (
+    // hue-rotate-[450deg] grayscale-[50%]
     <div
     id="map"
     className="mapClass z-[5] relative filter 
-    hue-rotate-[450deg] grayscale-[100%]
       w-[100%] h-[55vh]"
     >
       <div
